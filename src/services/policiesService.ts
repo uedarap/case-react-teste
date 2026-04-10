@@ -1,4 +1,5 @@
 import type { Policy } from '../types/policy';
+import { mockedPolicies } from '../mocks/policies';
 
 export async function getPolicies(): Promise<Policy[]> {
   const response = await fetch('/api/policies');
@@ -8,4 +9,12 @@ export async function getPolicies(): Promise<Policy[]> {
   }
 
   return response.json() as Promise<Policy[]>;
+}
+
+export async function getFakePolicies(): Promise<Policy[]> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(mockedPolicies);
+    }, 500);
+  });
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { Policy } from '../types/policy';
-import { getPolicies } from '../services/policiesService';
+import { getFakePolicies, getPolicies } from '../services/policiesService';
 
 export function usePolicies() {
   const [policies, setPolicies] = useState<Policy[]>([]);
@@ -11,7 +11,7 @@ export function usePolicies() {
     try {
       setLoading(true);
       setError(null);
-      const data = await getPolicies();
+      const data = await getFakePolicies();
       setPolicies(data);
     } catch {
       setError('Não foi possível carregar as apólices.');
