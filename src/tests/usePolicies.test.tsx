@@ -3,8 +3,12 @@ import { usePolicies } from '../hooks/usePolicies';
 import * as service from '../services/policiesService';
 
 describe('usePolicies', () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
   it('deve carregar apólices com sucesso', async () => {
-    jest.spyOn(service, 'getPolicies').mockResolvedValue([
+    jest.spyOn(service, 'getFakePolicies').mockResolvedValue([
       {
         id: '1',
         customerName: 'Ana Souza',
@@ -27,7 +31,7 @@ describe('usePolicies', () => {
   });
 
   it('deve retornar erro quando a API falhar', async () => {
-    jest.spyOn(service, 'getPolicies').mockRejectedValue(new Error('Falha'));
+    jest.spyOn(service, 'getFakePolicies').mockRejectedValue(new Error('Falha'));
 
     const { result } = renderHook(() => usePolicies());
 

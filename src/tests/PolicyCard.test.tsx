@@ -12,7 +12,7 @@ const mockPolicy = {
 
 describe('PolicyCard', () => {
   it('deve renderizar os dados da apólice', () => {
-    render(<PolicyCard policy={mockPolicy} onSelect={vi.fn()} />);
+    render(<PolicyCard policy={mockPolicy} onSelect={jest.fn()} />);
 
     expect(screen.getByText('Ana Souza')).toBeInTheDocument();
     expect(screen.getByText(/POL123/)).toBeInTheDocument();
@@ -20,7 +20,7 @@ describe('PolicyCard', () => {
   });
 
   it('deve chamar onSelect ao clicar em ver detalhes', async () => {
-    const onSelect = vi.fn();
+    const onSelect = jest.fn();
     const user = userEvent.setup();
 
     render(<PolicyCard policy={mockPolicy} onSelect={onSelect} />);

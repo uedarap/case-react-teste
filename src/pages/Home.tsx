@@ -79,15 +79,3 @@ export function Home() {
   );
 }
 
-const styles = {
-  main: {
-    padding: '20px',
-    fontFamily: 'Arial, sans-serif',
-  },
-  input: {
-    padding: '8px',
-    marginRight: '10px',
-    marginBottom: '20px',
-    width: '200px',
-  }
-};
