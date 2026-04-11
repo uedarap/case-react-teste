@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { usePolicies } from '../hooks/usePolicies';
 import { filterPolicies } from '../utils/filterPolicies';
 import type { Policy, PolicyStatus } from '../types/policy';
@@ -9,6 +9,18 @@ export function Home() {
   const [search, setSearch] = useState('');
   const [status, setStatus] = useState<PolicyStatus | 'Todos'>('Todos');
   const [selectedPolicy, setSelectedPolicy] = useState<Policy | null>(null);
+
+  const toggleTheme = () => {
+    const current = document.documentElement.getAttribute('data-bs-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute('data-bs-theme', next);
+  };
+
+  useEffect(() => {
+    toggleTheme();
+  }, []);
+
 
   const filteredPolicies = useMemo(() => {
     return filterPolicies(policies, { search, status });

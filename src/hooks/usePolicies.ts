@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { Policy } from '../types/policy';
-import { getFakePolicies, getPolicies } from '../services/policiesService';
+import { getFakePolicies } from '../services/policiesService';
 
 export function usePolicies() {
   const [policies, setPolicies] = useState<Policy[]>([]);
