@@ -1,3 +1,30 @@
+// O que está sendo testado
+// Uma função que recebe:
+
+// lista de apólices
+// texto de busca
+// status
+
+// e devolve a lista filtrada.
+// Por que esse teste é importante? - Porque é a regra de negócio mais isolada.
+
+// Aqui você não testa:
+// Você testa só:
+// “essa lógica retorna o resultado certo?”
+
+// describe('filterPolicies')
+// “estou testando a função filterPolicies”
+
+// it('deve filtrar por nome do cliente')
+// “ela deveria filtrar pelo nome”
+
+// const result = ...
+// executa a função
+
+// expect(...)
+// verifica se o retorno veio certo
+
+
 import { filterPolicies } from '../utils/filterPolicies';
 import type { Policy } from '../types/policy';
 

@@ -1,3 +1,27 @@
+
+
+// O que está sendo testado
+// O componente renderiza:
+
+// nome
+// número da apólice
+// status
+// botão
+
+// e quando clica no botão, chama a função recebida via prop.
+
+// O que isso quer dizer?
+// A gente monta o componente com um dado fake e confere se ele apareceu corretamente na tela.
+
+// render(...)
+// Monta o componente num DOM fake.
+
+// screen.getByText(...)
+// Procura o texto renderizado.
+
+// toBeInTheDocument()
+// Confirma que esse elemento existe na tela.
+
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { PolicyCard } from '../components/PolicyCard';
